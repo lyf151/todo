@@ -202,7 +202,7 @@ export default {
           //当处于待处理状态的事件修改了时间，改为了未到处理时间时
           if (
             item.status === 1 &&
-            new Date(item.date).getTime() > new Date().getTime()
+            new Date(item.handleDate).getTime() > new Date().getTime()
           ) {
             item.status = 0;
             this.todoList.push(item);
