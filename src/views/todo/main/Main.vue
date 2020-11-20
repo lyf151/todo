@@ -2,7 +2,7 @@
   <div class="outer">
     <el-dialog class="addDialog" title="新增待办" :visible.sync="addVisible">
       <div class="dialogDiv">
-        <Edit v-if="addVisible" @editdata="add" />
+        <Edit  v-if="addVisible" @editdata="add" />
       </div>
     </el-dialog>
 
@@ -106,7 +106,7 @@ export default {
         this.timer = setInterval(() => {
           this.todoList.forEach((item, index, arr) => {
             //每5秒遍历一次待办列表，当有事件到达处理时间时，将其加入处理列表中
-            if (new Date(item.date).getTime() <= new Date().getTime()) {
+            if (new Date(item.handleDate).getTime() <= new Date().getTime()) {
               item.status = 1;
               this.handleList.push(item);
               this.sort(this.handleList);
