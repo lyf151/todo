@@ -97,9 +97,9 @@ export default {
     init() {
       this.editData = JSON.parse(JSON.stringify(this.todoData))
       this.date =
-        (this.todoData.date && this.todoData.date.split(" ")[0]) || "";
+        (this.todoData.handleDate && this.todoData.handleDate.split(" ")[0]) || "";
       this.time =
-        (this.todoData.date && this.todoData.date.split(" ")[1]) || "";
+        (this.todoData.handleDate && this.todoData.handleDate.split(" ")[1]) || "";
     },
   },
 };
