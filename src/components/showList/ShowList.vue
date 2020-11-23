@@ -223,7 +223,6 @@ export default {
 .content::-o-scrollbar {
   display: none;
 }
-
 .content::scrollbar {
   display: none;
 }
@@ -231,7 +230,6 @@ export default {
 .itemDate {
   width: 100%;
   height: 20px;
-
   line-height: 20px;
   font-size: 12px;
 }

@@ -65,15 +65,16 @@ export default {
     },
   },
   created() {
-    //console.log(this.todoData,"cpnedit")
     this.init();
+    //console.log(this.todoData,"cpnedit")
+    
   },
   mounted() {},
   methods: {
     onSubmit() {
       const date = this.date + " " + this.time;
       if (this.editData.content) {
-        if (new Date(date).getTime() > new Date().getTime()||(this.editData.status!=0)) {
+        if (new Date(date).getTime() > new Date().getTime()||(this.editData.status!=0&&this.editData.status)) {
           //如果ID为空则是新建事件，创建id和初始状态为0
             if(!this.todoData.id){
                 this.editData.id = Math.round(Math.random() * new Date().getTime());
@@ -86,7 +87,10 @@ export default {
         } else {
           this.msg = "处理日期不能小于当前时间···"
           this.errShow = true;
-          this.init();
+          if(this.editData.status){
+            this.init();
+          }
+          
         }
       } else {
         this.msg = "内容不能为空···";
@@ -110,6 +114,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 20px;
+  left: 0px;
   text-align: center;
   line-height: 30px;
   color: red;
